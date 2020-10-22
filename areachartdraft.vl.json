@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 300,
+  "title": "Source of Global Electricity, 1990 - 2015",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jonathanbrisbane/FIT3179/main/data/ElectricitySourceWorld2.csv"
+  },
+  "selection": {
+    "electricity_highlight": {
+      "type": "multi",
+      "fields": ["Electricity Source"],
+      "bind": "legend"
+    }
+  },
+  "mark": "area",
+  "encoding": {
+    "x": {"timeUnit": "year", "field": "Year", "title": "Year"},
+    "y": {
+      "field": "GWh",
+      "aggregate": "sum",
+      "title": "Electricity Generated (GWh)"
+    },
+    "color": {
+      "field": "Electricity Source",
+      "scale": {"scheme": "category20c"}
+    },
+    "opacity": {
+      "condition": {"selection": "electricity_highlight", "value": 1},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "Electricity Source", "type": "nominal"},
+      {
+        "field": "GWh",
+        "type": "quantitative",
+        "format": ",",
+        "title": "Generated Electricity (GWh)"
+      }
+    ]
+  },
+  "config": {}
+}
