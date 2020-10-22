@@ -1,0 +1,121 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Global Land Temperature Rises",
+  "height": 300,
+  "width": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/jonathanbrisbane/FIT3179/main/data/Land_temperature_anomaly.csv"
+  },
+  "params": [
+    {
+      "name": "Temp_Above",
+      "value": -1,
+      "bind": {
+        "input": "range",
+        "min": -1,
+        "max": 1,
+        "step": 0.5,
+        "name": "Minimum Temperature: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum['Average Temperature Anomaly'] > Temp_Above"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "bar"},
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "timeUnit": "year",
+          "title": "Year",
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "labelAngle": 0,
+            "labelPadding": 5,
+            "gridColor": {
+              "condition": {"test": "datum['Year'] === 0", "value": "black"},
+              "value": "white"
+            }
+          }
+        },
+        "y": {
+          "field": "Average Temperature Anomaly",
+          "type": "quantitative",
+          "title": "Mean Temperature Anomaly (°C)",
+          "axis": {
+            "gridColor": {
+              "condition": {
+                "test": "datum['Average Temperature Anomaly'] === 0",
+                "value": "black"
+              },
+              "value": "white"
+            }
+          }
+        },
+        "color": {
+          "field": "Average Temperature Anomaly",
+          "title": "Temperature Change (°C)",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [-0.5, 0, 0.5, 1, 1.5],
+            "range": [
+              "#0571b0",
+              "#92c5de",
+              "#fddbc7",
+              "#f4a582",
+              "#ca0020",
+              "darkred"
+            ]
+          }
+        },
+        "opacity": {"value": 0.9},
+        "tooltip": [
+          {"field": "Year", "formatType": "year"},
+          {
+            "field": "Average Temperature Anomaly",
+            "title": "Temperature Anomaly (°C)"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "line-top",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Average Temperature Anomaly", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Average Temperature Anomaly'] > '1.5'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    },
+    {
+      "mark": "rule",
+      "encoding": {
+        "y": {
+          "aggregate": "mean",
+          "field": "Average Temperature Anomaly",
+          "type": "quantitative"
+        },
+        "color": {"value": "green"},
+        "size": {"value": 3}
+      }
+    }
+  ],
+  "config": {}
+}
