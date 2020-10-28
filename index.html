@@ -22,7 +22,7 @@
        font-family: 'Verdana', sans-serif;
      }
      .page{
-       width: 850px;    
+       width: 900px;    
        background-color: white;   
        margin: auto;
        padding: 50px;
@@ -55,39 +55,45 @@
       <div class="pure-u-1-1">
         <h1>Impacts of Global Energy Production on Climate Change</h1>
         <p>A Visualisation by Jonathan Brisbane</p>
+        <h2>The Globe is Warming</h2>
+        <p>Global Temperatures have been rising at unprecedented rates in the last 100 years. This has had major repercussions on Earth's natural ecosystems and has led to devastating losses to biodiversity, droughts and environmental changes.</p>
+        <div id="TempChart" class="vis-container></div>
      </div>
   </div>
   
   <div class="pure-g">
-    <div class="pure-u-1-3">
-      <div class="description description-left">
-        <h2>The Globe is Warming</h2>
-        <p>Global Temperatures have been rising at unprecedented rates in the last 100 years. This has had major repercussions on Earth's natural ecosystems and has led to devastating losses to biodiversity, droughts and environmental changes.</p>
-      </div>
-    </div>
-    <div class="pure-u-2-3">
-      <div id="TempChart"></div>
+    <div class="pure-u-1-1 small-font">
+      <p>Use the slider to highlight which years have had the highest temperatures. The green line highlights the mean temperature change during this period.</p>
     </div>
   </div>
-  
- 
-  <h3>Greenhouse Emissions</h3>
-  <p>The main driver of this change is Greenhouse Gas emissions. Levels of Carbon Dioxide, Nitrous Oxide and Methane have all been recorded at record highs in recent years</p>
-  <div id="LineChart"></div>
-  
+      
+  <div> class="pure-g">
+    <div class="pure-u-1-1">
+      <h3>Greenhouse Emissions</h3>
+      <p>The main driver of increasing temperatures is Greenhouse Gas emissions. Levels of Carbon Dioxide, Nitrous Oxide and Methane have all been recorded at record highs in recent years</p>
+      <div id="LineChart" class="vis-container></div>
+     </div>
+  </div>
+    
   <div class="pure-g">
+    <div class="pure-u-1-3">
+      <div class="description description-left">
+        <h4>Energy Production</h4>
+        <p>The world still has a high reliance on fossil fuels which are major emitters of greenhouse gases. However, renewable energies such as Solar or Wind are key to minimising our emissions and limit rising temperatures.</p>
+      </div>
+    </div>
     <div class="pure-u-2-3">
       <div id="AreaChart" class="vis-container"></div>
     </div>
-    <div> class="pure-u-1-3">
-      <div class="description description-right">
-        <h4>Energy Production</h4>
-        <p>The world still has a high reliance on fossil fuels which are major emitters of greenhouse emissions. However, renewable energies such as Solar or Wind are key to minimising our emissions and limit rising temperatures.</p>
-      </div>
-    </div>
-          
-<div id="RenewableMap"></div>
+  </div>
     
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <p>Some countries are acting faster in the face of climate change. Paraguay generates 100% of its electricity from renewable sources, whereas Australia is lagging behind at roughly 20%. We must do better to ensure a greener future.</p>
+      <div id="RenewableMap" class="vis-container></div>
+    </div>
+  </div>
+                                  
 <script type="text/javascript">
   var vis1 = "https://jonathanbrisbane.github.io/FIT3179/visualisations/RenewableMap.vl.json";
   
