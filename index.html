@@ -19,6 +19,7 @@
     }
      body{
        background-color: lightgreen;
+       font-family: 'Verdana', sans-serif;
      }
      .page{
        width: 850px;    
@@ -72,7 +73,8 @@
  
   <h3>Greenhouse Emissions</h3>
   <p>The main driver of this change is Greenhouse Gas emissions. Levels of Carbon Dioxide, Nitrous Oxide and Methane have all been recorded at record highs in recent years</p>
-
+  <div id="LineChart"></div>
+  
   <div class="pure-g">
     <div class="pure-u-2-3">
       <div id="AreaChart" class="vis-container"></div>
@@ -102,6 +104,12 @@
   var vis3 = "https://jonathanbrisbane.github.io/FIT3179/areachartdraft.vl.json";
   
   vegaEmbed('#AreaChart', vis3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var vis4 = "https://jonathanbrisbane.github.io/FIT3179/visualisations/basicline-GHG.vl.json";
+  
+  vegaEmbed('#LineChart', vis4).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
