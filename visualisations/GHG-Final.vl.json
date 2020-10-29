@@ -17,13 +17,14 @@
         "y": {
           "field": "Mt",
           "type": "quantitative",
-          "axis": {"title": "Mt(CO2) Equivalent", "grid": false}
+          "axis": {"title": "Mt", "grid": false}
         },
         "color": {
           "field": "Greenhouse Gas",
           "type": "nominal",
-          "scale": {"range": ["#e41a1c", "#984ea3", "#4daf4a", "#377eb8"]}},
-        "opacity": {"value": 0.8}
+          "scale": {"range": ["#e41a1c", "#984ea3", "#4daf4a", "#377eb8"]}
+        },
+        "opacity": {"value": 0.7}
       },
       "layer": [
         {"mark": "line"},
