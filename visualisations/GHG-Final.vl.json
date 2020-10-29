@@ -22,8 +22,8 @@
         "color": {
           "field": "Greenhouse Gas",
           "type": "nominal",
-          "scale": {"range": ["#e41a1c", "#984ea3", "#4daf4a", "#377eb8"]}
-        }
+          "scale": {"range": ["#e41a1c", "#984ea3", "#4daf4a", "#377eb8"]}},
+        "opacity": {"value": 0.8}
       },
       "layer": [
         {"mark": "line"},
