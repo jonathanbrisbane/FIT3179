@@ -116,5 +116,5 @@
       }
     ]
   },
-  "config": {}
+  "config": {"font": "Georgia"}
 }
