@@ -1,0 +1,120 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 300,
+  "title": "Global Energy Consumption by Source, 1965 - 2019",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jonathanbrisbane/FIT3179/main/data/energy-consumption-by-source.csv"
+  },
+  "params": [
+    {
+      "name": "Source_Selector",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Oil",
+          "Coal",
+          "Gas",
+          "Hydro",
+          "Nuclear",
+          "Wind",
+          "Solar",
+          "Other Sources",
+          "Biofuels"
+        ],
+        "labels": [
+          "Show All",
+          "Oil",
+          "Coal",
+          "Gas",
+          "Hydro",
+          "Nuclear",
+          "Wind",
+          "Solar",
+          "Other Sources",
+          "Biofuels"
+        ],
+        "name": "Select By Energy Source: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Source_Selector == null || datum.Source == Source_Selector"},
+    {
+      "calculate": "if(datum.Source === 'Oil', 0, if(datum.Source === 'Coal', 1, if(datum.Source === 'Gas', 2, if(datum.Source === 'Hydro', 3, if(datum.Source === 'Nuclear', 4, if(datum.Source === 'Wind', 5, if(datum.Source === 'Solar', 6, 7)))))))",
+      "as": "siteOrder"
+    }
+  ],
+  "selection": {
+    "energy_highlight": {
+      "type": "multi",
+      "fields": ["Source"],
+      "bind": "legend"
+    }
+  },
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "timeUnit": "year",
+      "field": "Year",
+      "title": "Year",
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "TWh",
+      "aggregate": "sum",
+      "title": "Energy Consumption (TWh)",
+      "axis": {"grid": false}
+    },
+    "color": {
+      "field": "Source",
+      "sort": "ascending",
+      "scale": {
+        "domain": [
+          "Oil",
+          "Coal",
+          "Gas",
+          "Hydro",
+          "Nuclear",
+          "Wind",
+          "Solar",
+          "Other Sources",
+          "Biofuels"
+        ],
+        "range": [
+          "#d4322c",
+          "f16e43",
+          "fcac63",
+          "d7ee8e",
+          "a4d86e",
+          "64bc61",
+          "22964f",
+          "#1b7837",
+          "#542788"
+        ]
+      }
+    },
+    "order": {"field": "siteOrder"},
+    "opacity": {
+      "condition": {"selection": "energy_highlight", "value": 0.9},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "Source", "type": "nominal"},
+      {
+        "field": "Year",
+        "type": "temporal",
+        "timeUnit": "year",
+        "title": "Year"
+      },
+      {
+        "field": "TWh",
+        "type": "quantitative",
+        "format": ",",
+        "title": "Energy Consumed (TWh)"
+      }
+    ]
+  },
+  "config": {}
+}
