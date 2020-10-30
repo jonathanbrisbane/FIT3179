@@ -47,7 +47,7 @@
         "field": "Renewables (% electricity)",
         "type": "quantitative",
         "title": "Renewable Electricity %",
-        "format": ".4s"
+        "format": ","
       }
     ]
   },
