@@ -60,6 +60,7 @@
           "field": "Average Temperature Anomaly",
           "title": "Temperature Change (°C)",
           "type": "quantitative",
+          "legend": {"direction":"horizontal", "legendX": 250, "legendY": 345, "orient": "none"},
           "scale": {
             "type": "threshold",
             "domain": [-0.5, 0, 0.5, 1, 1.5],
@@ -88,7 +89,7 @@
         "type": "text",
         "align": "center",
         "baseline": "line-top",
-        "dx": 265,
+        "dx": 315,
         "dy": -150,
         "fontSize": 11.5,
         "fontStyle": "italic"
