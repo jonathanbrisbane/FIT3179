@@ -44,6 +44,7 @@
     "color": {
       "field": "Entity",
       "title": "Location",
+      "legend": {"orient": "none", "legendX": 70, "legendY": 340,"columns": 5, "rowPadding": 10},
       "scale": {
         "domain": [
           "Australia",
