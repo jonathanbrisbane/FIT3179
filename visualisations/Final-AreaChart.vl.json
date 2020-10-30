@@ -70,6 +70,7 @@
     "color": {
       "field": "Source",
       "sort": "ascending",
+      "legend": {"orient": "none", "legendX": 80, "legendY": 340,"columns": 5, "rowPadding": 10},
       "scale": {
         "domain": [
           "Oil",
