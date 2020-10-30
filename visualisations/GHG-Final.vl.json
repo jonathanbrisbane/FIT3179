@@ -70,13 +70,13 @@
                 "type": "text",
                 "stroke": "white",
                 "strokeWidth": 2,
-                "align": "left",
+                "align": "right",
                 "dx": 5,
                 "dy": -5
               }
             },
             {
-              "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5},
+              "mark": {"type": "text", "align": "right", "dx": 5, "dy": -5},
               "encoding": {
                 "color": {"type": "nominal", "field": "Greenhouse Gas"}
               }
