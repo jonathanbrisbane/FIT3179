@@ -24,12 +24,12 @@
       text-align: center;
     }
     p{
-      font-family: verdana;
+      font-family: lato;
       text-align: center;
     }
      body{
        background-color: #55AE3A;
-       font-family: verdana;
+       font-family: lato;
      }
      .page{
        width: 900px;    
@@ -57,6 +57,7 @@
     }
     .small-font{
         font-size: 12px;
+        font-family: lato;
     }
   </style>
 </head>
@@ -88,22 +89,40 @@
       <div id="LineChart" class="vis-container"></div>
      </div>
   </div>
-    
+   
+  <div class="pure-g">
+    <div class="pure-u-1-1 small-font">
+      <p>Hover your cursor over the graph to highlight the amount of GHG emissions.</p>
+    </div>
+  </div>
+   
   <div class="pure-g">
     <div class="pure-u-1-1">
-        <h4>Energy Production</h4>
-        <p>The world still has a high reliance on fossil fuels which are major emitters of greenhouse gases. However, renewable energies such as <strong>Solar or Wind</strong> are key to minimising our emissions and limit rising temperatures.</p>
+        <h4>Energy Consumption</h4>
+        <p>Fossil fuels are major emitters of greenhouse gases and dominate the world's energy consumption. However, renewable energies such as <strong>Solar or Wind</strong> are key to minimising our emissions and limiting rising temperatures.</p>
       <div id="AreaChart" class="vis-container"></div>
+    </div>
+  </div>
+  
+   <div class="pure-g">
+    <div class="pure-u-1-1 small-font">
+      <p>Click on the legend or use the selection menu to highlight the energy source.</p>
     </div>
   </div>
    
   <div class="pure-g">
     <div class="pure-u-1-1">
       <p><strong>Australia</strong> may not be the highest consumer of fossil fuels per capita, however we still have a lot of work to do to lower our reliance on fossil fuels.</p>
-      <p><strong>Europe</strong> is leading the way, consuming significantly less fossil fuels than a majority of the world, as they invest more in Renewables</p>
+      <p><strong>Europe</strong> and <strong>Brazil</strong> are leading the way, consuming significantly less fossil fuels than a majority of the world, as they invest more in Renewables.</p>
       <div id="BarChart" class="vis-container"></div>
     </div>
    </div>
+   
+   <div class="pure-g">
+    <div class="pure-u-1-1 small-font">
+      <p>Click on the legend to highlight a region or use the slider to compare different years.</p>
+    </div>
+  </div>
     
   <div class="pure-g">
     <div class="pure-u-1-1">
@@ -114,7 +133,7 @@
    
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
-        <p>This visualisation was created by <a href="https://github.com/jonathanbrisbane" target="_blank">Jonathan Brisbane</a>. Data was sourced from is <a href="https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html"" target="_blank">BP Statistical Review of Energy</href>, and .</p>
+        <p>This visualisation was created by <a href="https://github.com/jonathanbrisbane" target="_blank">Jonathan Brisbane</a>. Data was sourced from is <a href="https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html" target="_blank">BP Statistical Review of Energy</a>, and <a href="https://www.ncdc.noaa.gov/cag/global/time-series" target="_blank">NOAA</a>.</p>
       </div>
     </div>
    
