@@ -22,6 +22,7 @@
         "color": {
           "field": "Greenhouse Gas",
           "type": "nominal",
+          "legend": {"orient": "none", "legendX": 95, "legendY": 340,"columns": 5, "rowPadding": 10},
           "scale": {"range": ["#e41a1c", "#984ea3", "#4daf4a", "#377eb8"]}
         },
         "opacity": {"value": 0.7}
