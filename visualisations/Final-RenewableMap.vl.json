@@ -26,7 +26,6 @@
       "field": "Renewables (% electricity)",
       "type": "quantitative",
       "title": "Renewable Electricity %",
-      "legend": {"orient": "bottom"},
       "scale": {
         "type": "threshold",
         "domain": [15, 30, 45, 60, 75, 90],
