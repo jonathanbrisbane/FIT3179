@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Fossil Fuel Consumption per Capita, 1965 - 2019",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/jonathanbrisbane/FIT3179/main/data/fossil-fuels-per-capita.csv"
+  },
+  "params": [
+    {
+      "name": "Year_Selector",
+      "value": 2019,
+      "bind": {
+        "input": "range",
+        "min": 1965,
+        "max": 2019,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Year == Year_Selector"},
+    {
+      "filter": "datum.Entity == 'Qatar' || datum.Entity == 'Australia' || datum.Entity == 'Brazil' || datum.Entity == 'Europe' || datum.Entity == 'United States' || datum.Entity == 'Singapore' || datum.Entity == 'Saudi Arabia' || datum.Entity == 'New Zealand' || datum.Entity == 'South Africa' || datum.Entity == 'Russia'"
+    }
+  ],
+  "selection": {
+    "location_highlight": {
+      "type": "multi",
+      "fields": ["Entity"],
+      "bind": "legend"
+    }
+  },
+  "mark": {"type": "bar"},
+  "encoding": {
+    "y": {"field": "Entity", "title": null, "type": "nominal", "sort": "-x"},
+    "x": {
+      "aggregate": "sum",
+      "field": "Fossil fuels per capita (kWh)",
+      "title": "Fossil Fuel Consumption (kWh)",
+      "axis": {"grid": false}
+    },
+    "color": {
+      "field": "Entity",
+      "title": "Location",
+      "scale": {
+        "domain": [
+          "Australia",
+          "Brazil",
+          "Europe",
+          "New Zealand",
+          "Qatar",
+          "Russia",
+          "Singapore",
+          "Saudi Arabia",
+          "South Africa",
+          "United States"
+        ],
+        "range": [
+          "d7ee8e",
+          "#1b7837",
+          "#542788",
+          "64bc61",
+          "#d4322c",
+          "a4d86e",
+          "f16e43",
+          "fcac63",
+          "22964f",
+          "fedd8d"
+        ]
+      }
+    },
+    "opacity": {
+      "condition": {"selection": "location_highlight", "value": 0.9},
+      "value": 0.2
+    },
+    "tooltip": [
+      {
+        "field": "Fossil fuels per capita (kWh)",
+        "format": ",",
+        "title": "Fossil Fuel Consumption (kWh)"
+      },
+      {"field": "Year"}
+    ]
+  },
+  "config": {}
+}
