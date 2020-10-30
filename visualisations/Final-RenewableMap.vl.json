@@ -13,7 +13,7 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/jonathanbrisbane/FIT3179/main/share-electricity-renewables.csv"
+          "url": "https://raw.githubusercontent.com/jonathanbrisbane/FIT3179/main/data/share-electricity-renewables.csv"
         },
         "key": "Entity",
         "fields": ["Renewables (% electricity)"]
