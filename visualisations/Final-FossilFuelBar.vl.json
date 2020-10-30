@@ -84,5 +84,5 @@
       {"field": "Year"}
     ]
   },
-  "config": {}
+  "config": {"font": "Georgia"}
 }
