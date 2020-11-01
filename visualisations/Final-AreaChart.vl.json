@@ -20,8 +20,8 @@
           "Nuclear",
           "Wind",
           "Solar",
-          "Other Sources",
-          "Biofuels"
+          "Biofuels",
+          "Other Sources"
         ],
         "labels": [
           "Show All",
@@ -32,8 +32,8 @@
           "Nuclear",
           "Wind",
           "Solar",
-          "Other Sources",
-          "Biofuels"
+          "Biofuels",
+          "Other Sources"
         ],
         "name": "Select By Energy Source: "
       }
@@ -80,8 +80,8 @@
           "Nuclear",
           "Wind",
           "Solar",
-          "Other Sources",
-          "Biofuels"
+          "Biofuels",
+          "Other Sources"
         ],
         "range": [
           "#d4322c",
@@ -91,8 +91,8 @@
           "#a4d86e",
           "#64bc61",
           "#22964f",
-          "#984ea3",
-          "#1b7837"
+          "#1b7837",
+          "#984ea3"
         ]
       }
     },
