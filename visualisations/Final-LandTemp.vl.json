@@ -22,8 +22,13 @@
   "transform": [
     {"filter": "datum['Average Temperature Anomaly'] > Temp_Above"}
   ],
-  "layer": [
-    {
+  "layer": [{
+    "selection": {
+      "brush": {
+        "type": "interval",
+        "encodings": ["x"]
+      }  
+    },
       "mark": {"type": "bar"},
       "encoding": {
         "x": {
@@ -60,7 +65,12 @@
           "field": "Average Temperature Anomaly",
           "title": "Temperature Change (°C)",
           "type": "quantitative",
-          "legend": {"direction":"horizontal", "legendX": 250, "legendY": 345, "orient": "none"},
+          "legend": {
+            "direction": "horizontal",
+            "legendX": 250,
+            "legendY": 345,
+            "orient": "none"
+          },
           "scale": {
             "type": "threshold",
             "domain": [-0.5, 0, 0.5, 1, 1.5],
@@ -74,7 +84,11 @@
             ]
           }
         },
-        "opacity": {"value": 0.9},
+        "opacity": {
+        "condition": {
+          "selection": "brush", "value": 1
+        },
+        "value": 0.7},
         "tooltip": [
           {"field": "Year", "formatType": "year"},
           {
@@ -105,8 +119,10 @@
           "value": 0
         }
       }
-    },
-    {
+    },{
+    "transform": [{
+      "filter": {"selection": "brush"}
+    }],
       "mark": "rule",
       "encoding": {
         "y": {
